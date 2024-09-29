@@ -18,7 +18,6 @@
 		F2BA89322CA993EE00615472 /* Bshayr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA89312CA993EE00615472 /* Bshayr.swift */; };
 		F2BA89342CA995BA00615472 /* Renad_Nahed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA89332CA995BA00615472 /* Renad_Nahed.swift */; };
 		F2BA89362CA995C800615472 /* Nahed_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA89352CA995C800615472 /* Nahed_2.swift */; };
-		F2BA89382CA995D400615472 /* Nahed_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA89372CA995D400615472 /* Nahed_3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		F2BA89312CA993EE00615472 /* Bshayr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bshayr.swift; sourceTree = "<group>"; };
 		F2BA89332CA995BA00615472 /* Renad_Nahed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renad_Nahed.swift; sourceTree = "<group>"; };
 		F2BA89352CA995C800615472 /* Nahed_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nahed_2.swift; sourceTree = "<group>"; };
-		F2BA89372CA995D400615472 /* Nahed_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nahed_3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,6 @@
 				F2290AA02CA97F4800C77459 /* Nahed_1.swift */,
 				F2BA89332CA995BA00615472 /* Renad_Nahed.swift */,
 				F2BA89352CA995C800615472 /* Nahed_2.swift */,
-				F2BA89372CA995D400615472 /* Nahed_3.swift */,
 				F2BA89312CA993EE00615472 /* Bshayr.swift */,
 				F2290AA22CA97F5500C77459 /* Renad.swift */,
 				F2290AA42CA97F6000C77459 /* Sara.swift */,
@@ -167,7 +164,6 @@
 				F2BA89362CA995C800615472 /* Nahed_2.swift in Sources */,
 				F2BA89342CA995BA00615472 /* Renad_Nahed.swift in Sources */,
 				F2290AA52CA97F6000C77459 /* Sara.swift in Sources */,
-				F2BA89382CA995D400615472 /* Nahed_3.swift in Sources */,
 				95AECE982CA97E58000C9BEE /* Team6PresentMeApp.swift in Sources */,
 				F2290AA12CA97F4800C77459 /* Nahed_1.swift in Sources */,
 				F2290AA72CA97F6E00C77459 /* Bayan.swift in Sources */,

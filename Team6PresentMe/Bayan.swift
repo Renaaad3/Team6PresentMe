@@ -1,8 +1,20 @@
-//
-//  Bayan.swift
-//  Team6PresentMe
-//
-//  Created by Nahed Almutairi on 26/03/1446 AH.
-//
-
+import SwiftUI
 import Foundation
+struct Bayan : View {
+    var body: some View {
+        VStack  {
+            HStack {
+                Image("bodytype")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
+                VStack {
+                    Text("Neture")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+            }
+        }}}
+    #Preview {
+        Bayan()
+    }

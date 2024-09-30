@@ -11,26 +11,24 @@ import SwiftUI
 
 struct Nahed1: View {
     var body: some View {
-        NavigationStack { // تأكد أنك تستخدم NavigationStack
+        NavigationStack {
+            
             VStack {
-                // إضافة الصورة
-                Image("onboarding") // تأكد من وجود الصورة في Assets
+              Image("onboarding")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 400)
                     .padding(.top, 150)
                 
-                // إضافة النص في المنتصف
-                Text("Discover your style!")
+              Text("Discover your style!")
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .padding(.top, 30)
                 
-                Spacer() // لدفع الزر إلى الأسفل
-
-                // زر التنقل إلى الصفحة الثانية
-                HStack {
-                    Spacer() // لدفع الزر إلى اليمين
+                Spacer()
+                
+            HStack {
+                Spacer()
                     NavigationLink(destination: Renad1Nahed()) {
                         Image(systemName: "arrow.right.circle.fill")
                             .resizable()

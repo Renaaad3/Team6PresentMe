@@ -7,41 +7,43 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct Nahed1: View {
     var body: some View {
-        VStack {
-            // Add the image at the top
-            Image("onboarding") // Replace with the actual image name in your assets
-                .resizable()
-                .scaledToFit()
-                .frame(height: 400) // Adjust the height as needed
-                .padding(.top, 150) // Padding from the top
-            
-            // Add the centered text
-            Text("Discover your style!")
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .padding(.top, 30) // Adjust padding as necessary
-            
-            Spacer() // Pushes the button to the bottom
+        NavigationStack { // تأكد أنك تستخدم NavigationStack
+            VStack {
+                // إضافة الصورة
+                Image("onboarding") // تأكد من وجود الصورة في Assets
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 400)
+                    .padding(.top, 150)
+                
+                // إضافة النص في المنتصف
+                Text("Discover your style!")
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 30)
+                
+                Spacer() // لدفع الزر إلى الأسفل
 
-            // Add the button with arrow icon at the bottom right
-            HStack {
-                Spacer() // Pushes the button to the right side
-                Button(action: {
-                    // Define your action here
-                }) {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.black) // Adjust the color if needed
+                // زر التنقل إلى الصفحة الثانية
+                HStack {
+                    Spacer() // لدفع الزر إلى اليمين
+                    NavigationLink(destination: Renad1Nahed()) {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.black)
+                    }
+                    .padding(.bottom, 30)
+                    .padding(.trailing, 20)
                 }
-                .padding(.bottom, 30) // Padding from the bottom
-                .padding(.trailing, 20) // Padding from the right
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 245/255, green: 245/255, blue: 247/255))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemGray6)) // Change the background color to your preferred one
     }
 }
 

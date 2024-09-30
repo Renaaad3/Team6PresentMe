@@ -12,7 +12,6 @@ import SwiftUI
 struct Nahed1: View {
     var body: some View {
         NavigationStack {
-            
             VStack {
               Image("onboarding")
                     .resizable()

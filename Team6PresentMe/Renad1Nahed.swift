@@ -127,7 +127,7 @@ struct Renad1Nahed: View {
                 
                 HStack {
                     Spacer()
-                    // إذا لم يتم اختيار أي لون، يتم تعطيل NavigationLink
+                   
                     NavigationLink(destination: Renad()) {
                         Image(systemName: "arrow.right.circle.fill")
                             .resizable()

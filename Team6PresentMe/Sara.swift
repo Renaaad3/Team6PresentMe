@@ -4,6 +4,7 @@
 //
 //  Created by Nahed Almutairi on 26/03/1446 AH.
 //
+
 import SwiftUI
 
 struct Sara: View {
@@ -27,12 +28,16 @@ struct Sara: View {
         NavigationView {
             VStack {
                 ZStack {
+                    // يمكنك تغيير لون الخلفية هنا
+                    Color(red: 245/255, green: 245/255, blue: 247/255) // لون الخلفية
+                        .edgesIgnoringSafeArea(.all) // لجعل اللون يغطي كل المساحة
+
                     ScrollView {
                         LazyVGrid(columns: adaptiveColumns, spacing: 35) { // التباعد العمودي
                             ForEach(0..<imageNames.count, id: \.self) { index in
                                 NavigationLink(destination: DetailView(selectedImage: imageNames[index])) { // الانتقال إلى صفحة التفاصيل
                                     ZStack { // استخدم ZStack لضمان تداخل الصورة مع الخلفية
-                                        Color.gray
+                                        Color.white
                                             .frame(width: 178, height: 178) // حجم المربعات
                                             .cornerRadius(20)
                                         
@@ -76,9 +81,10 @@ struct DetailView: View {
         }
         .navigationTitle("Detail View")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color.white) // لون الخلفية لصفحة التفاصيل
     }
 }
-#Preview {
-        Sara()
-    }
 
+#Preview {
+    Sara()
+    }

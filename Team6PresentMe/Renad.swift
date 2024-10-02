@@ -1,10 +1,9 @@
-
 import SwiftUI
 
 struct Renad: View {
     @State private var selectedCard: Int? = nil
     
-    let bodyShapes = ["  Round Shape", " Hourglass Shape", " Rectangle Shape ", " Inverted Triangle Shape", "   Pear Shape"]
+    let bodyShapes = ["Round Shape", "Hourglass Shape", "Rectangle Shape", "Inverted Triangle Shape", "Pear Shape"]
     
     let bodyShapeImages = ["Round", "Hourglass", "Rectangle", "Inverted Tringle", "pear"]
     
@@ -13,13 +12,14 @@ struct Renad: View {
         "Characterized by a well-defined waist and balanced bust and hip measurements.",
         "A rectangle body means that the width of your bust, waist, and hips are approximately the same.",
         "Is an analogy that your bust and shoulders are broader than your hips.",
-        "Pear body shape is characterised by large hips which are wider than the bust and shoulders." ]
+        "Pear body shape is characterised by large hips which are wider than the bust and shoulders."
+    ]
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 VStack {
-                    Text("  Choose Your Body Shape! ")
+                    Text("Choose Your Body Shape!")
                         .font(.custom("American Typewriter", size: 30)).bold()
                         .padding(.bottom, 0)
                         .fixedSize()
@@ -38,29 +38,31 @@ struct Renad: View {
                                 description: bodyShapeDescriptions[index]
                             )
                             .onTapGesture {
-                                selectedCard = index // Set selected card
+                                selectedCard = index
                             }
-                            .padding(.horizontal, 17) // Padding for x position
+                            .padding(.horizontal, 17)
                         }
                     }
-                    .padding(.top, 10) // Padding for y position
+                    .padding(.top, 10)
                     
                     Spacer()
                     HStack {
                         Spacer()
-                        NavigationLink(destination: Bayan()) {
-                            Image(systemName: "arrow.right.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.black)
+                        if let selectedCard = selectedCard {
+                            // Pass the selected image to the Bayan view
+                            NavigationLink(destination: Bayan(selectedImage: bodyShapeImages[selectedCard])) {
+                                Image(systemName: "arrow.right.circle.fill")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.black)
+                            }
+                            .padding(.bottom, 30)
+                            .padding(.trailing, 20)
                         }
-                        .padding(.bottom, 30)
-                        .padding(.trailing, 20)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 245/255, green: 245/255, blue: 247/255))
-               
                 .padding()
             }
         }
@@ -104,11 +106,8 @@ struct BodyShapeCard: View {
                     .stroke(isSelected ? Color.black : Color.white, lineWidth: 2)
             )
         }
-       
     }
-    
 }
-
 #Preview {
     Renad()
 }

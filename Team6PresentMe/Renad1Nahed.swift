@@ -22,9 +22,8 @@ struct Renad1Nahed: View {
             VStack(spacing: 20) {
                 
                 Text("Enter Your Body Size")
-                    .font(.custom("American Typewriter", size: 36)).bold()
+                    .font(.custom("American Typewriter", size: 28)).bold()
                     .multilineTextAlignment(.center)
-                    .underline(true, color: Color.gray)
                     .padding(.top, 20)
 
                 VStack(spacing: 15) {
@@ -68,9 +67,9 @@ struct Renad1Nahed: View {
                 }
 
                 Text("Select Your Undertone")
-                    .font(.custom("American Typewriter", size: 35)).bold()
+                    .font(.custom("American Typewriter", size: 28)).bold()
                     .multilineTextAlignment(.center)
-                    .underline(true, color: Color.gray)
+                    
 
                 VStack(spacing: 15) {
                     UndertoneOption(

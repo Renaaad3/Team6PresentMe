@@ -13,7 +13,6 @@ struct Bayan: View {
         NavigationView {
             VStack(spacing: 16) {
                 
-                // الجزء العلوي من الصفحة
                 HStack(spacing: 20) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

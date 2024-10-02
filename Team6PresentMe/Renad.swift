@@ -20,12 +20,12 @@ struct Renad: View {
             ScrollView {
                 VStack {
                     Text("Choose Your Body Shape!")
-                        .font(.custom("American Typewriter", size: 30)).bold()
+                        .font(.custom("American Typewriter", size: 28)).bold()
                         .padding(.bottom, 0)
                         .fixedSize()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.center)
-                        .underline(true, color: Color.gray)
+                       
                         .baselineOffset(15)
                         .padding()
                     
@@ -49,14 +49,14 @@ struct Renad: View {
                     HStack {
                         Spacer()
                         if let selectedCard = selectedCard {
-                            // Pass the selected image to the Bayan view
+                            
                             NavigationLink(destination: Bayan(selectedImage: bodyShapeImages[selectedCard])) {
                                 Image(systemName: "arrow.right.circle.fill")
                                     .resizable()
                                     .frame(width: 50, height: 50)
                                     .foregroundColor(.black)
                             }
-                            .padding(.bottom, 30)
+                            .padding(.bottom, 20)
                             .padding(.trailing, 20)
                         }
                     }

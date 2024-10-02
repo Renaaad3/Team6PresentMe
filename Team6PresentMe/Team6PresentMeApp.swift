@@ -11,7 +11,7 @@ import SwiftUI
 struct Team6PresentMeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Nahed1()
         }
     }
 }

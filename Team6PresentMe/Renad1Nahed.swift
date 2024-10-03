@@ -17,6 +17,9 @@ struct Renad1Nahed: View {
     @State private var selectedColorForCool: Color? = nil
     @State private var selectedColorForWarm: Color? = nil
     
+    @State private var showAlert = false
+    @State private var navigateToNextPage = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -127,22 +130,37 @@ struct Renad1Nahed: View {
                 HStack {
                     Spacer()
                    
-                    NavigationLink(destination: Renad()) {
-                        Image(systemName: "arrow.right.circle.fill")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.black)
+                    NavigationLink(destination: Renad(), isActive: $navigateToNextPage) {
+                                            EmptyView()
+                                        }
+
+                                        Button(action: {
+                                            if selectedColorForNature == nil && selectedColorForCool == nil && selectedColorForWarm == nil {
+                                               
+                                                showAlert = true
+                                            } else {
+                                                navigateToNextPage = true
+                                            }
+                                        }) {
+                                            Image(systemName: "arrow.right.circle.fill")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(.black)
+                                        }
+                                        .padding(.bottom, 1)
+                                        .padding(.trailing, 20)
+                                    }
+                                    .alert(isPresented: $showAlert) {
+                                        Alert(title: Text("Attention"),
+                                              message: Text("Please select a circle before proceeding."),
+                                              dismissButton: .default(Text("OK")))
+                                    }
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color(red: 245/255, green: 245/255, blue: 247/255))
+                            }
+                        }
                     }
-                    .disabled(selectedColorForNature == nil && selectedColorForCool == nil && selectedColorForWarm == nil)
-                    .padding(.bottom, 1)
-                    .padding(.trailing, 20)
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(red: 245/255, green: 245/255, blue: 247/255))
-        }
-    }
-}
 
 struct UndertoneOption: View {
     var label: String
@@ -150,49 +168,49 @@ struct UndertoneOption: View {
     var isSelected: Bool
     @Binding var selectedColor: Color?
     var onTap: () -> Void
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Text(label)
-                    .font(.title2)
-                    .fontWeight(.medium)
                 
-                Spacer()
-                
-                HStack(spacing: -15) {
-                    ForEach(colors, id: \.self) { color in
-                        Circle()
-                            .fill(color)
-                            .frame(width: 40, height: 40)
-                            .overlay(
-                                Circle()
-                                    .stroke(selectedColor == color && isSelected ? Color.black : Color.clear, lineWidth: 2)
-                            )
-                            .onTapGesture {
-                                if isSelected {
-                                    selectedColor = selectedColor == color ? nil : color
+        var body: some View {
+            VStack {
+                HStack {
+                    Text(label)
+                            .font(.title2)
+                            .fontWeight(.medium)
+                                    
+                                    Spacer()
+                                    
+                                    HStack(spacing: -15) {
+                                        ForEach(colors, id: \.self) { color in
+                                            Circle()
+                                                .fill(color)
+                                                .frame(width: 40, height: 40)
+                                                .overlay(
+                                                    Circle()
+                                                        .stroke(selectedColor == color && isSelected ? Color.black : Color.clear, lineWidth: 2)
+                                                )
+                                                .onTapGesture {
+                                                    if isSelected {
+                                                        selectedColor = selectedColor == color ? nil : color
+                                                    }
+                                                }
+                                        }
+                                    }
+                                }
+                                .padding()
+                                .frame(width: 340, height: 90)
+                                .background(RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color.white)
+                                                .shadow(radius: 5)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                        .stroke(isSelected ? Color.black : Color.clear, lineWidth: 2)
+                                                ))
+                                .onTapGesture {
+                                    onTap()
                                 }
                             }
+                        }
                     }
-                }
-            }
-            .padding()
-            .frame(width: 340, height: 90)
-            .background(RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
-                            .shadow(radius: 5)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(isSelected ? Color.black : Color.clear, lineWidth: 2)
-                            ))
-            .onTapGesture {
-                onTap()
-            }
-        }
-    }
-}
 
 #Preview {
     Renad1Nahed()
-}
+    }

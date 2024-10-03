@@ -65,6 +65,7 @@ struct Renad: View {
                 .background(Color(red: 245/255, green: 245/255, blue: 247/255))
                 .padding()
             }
+            .navigationBarBackButtonHidden(false)
         }
     }
 }

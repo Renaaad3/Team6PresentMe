@@ -150,10 +150,12 @@ struct Bayan: View {
                     .animation(.easeInOut)
                 }
             }
+            
             .navigationTitle(selectedCategory)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red: 245/255, green: 245/255, blue: 247/255))
         }
+        
     }
 }
 

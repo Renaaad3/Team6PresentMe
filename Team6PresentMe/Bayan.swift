@@ -5,7 +5,7 @@ struct Bayan: View {
     var selectedImage: String? = nil
     @State private var showInfoSheet: Bool = false
     let images = ["ourfits_image", "shirts_image", "jeans_image", "dress_image"]
-    @State private var selectedCategory: String? = nil
+    @State private var selectedCategory: String? = "nil"
     
     let adaptiveColumn = [GridItem(.adaptive(minimum: 165), spacing: 20)]
     
@@ -116,11 +116,11 @@ struct Bayan: View {
                        Spacer()
                         
                         VStack {
-                            Image("info")
+                            Image("Info")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 300, height: 300)
-                                .padding( )
+                                .padding()
                             
                             Text("""
                                 We help you discover the perfect styles that fit your body shape and skin undertone. We offer personalized recommendations to make fashion choices easier and tailored just for you. Whether it's casual or formal, we ensure you find the right pieces to match your unique look and feel confident every day.
@@ -153,7 +153,7 @@ struct Bayan: View {
                     .transition(.move(edge: .bottom))
                 }
             }
-           // .navigationTitle(selectedCategory)
+          // .navigationTitle(selectedCategory)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {

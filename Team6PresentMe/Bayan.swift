@@ -5,7 +5,7 @@ struct Bayan: View {
     var selectedImage: String? = nil
     @State private var showInfoSheet: Bool = false
     let images = ["ourfits_image", "shirts_image", "jeans_image", "dress_image"]
-    @State private var selectedCategory: String = "Main Page"
+    @State private var selectedCategory: String? = nil
     
     let adaptiveColumn = [GridItem(.adaptive(minimum: 165), spacing: 20)]
     
@@ -153,7 +153,7 @@ struct Bayan: View {
                     .transition(.move(edge: .bottom))
                 }
             }
-            .navigationTitle(selectedCategory)
+           // .navigationTitle(selectedCategory)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
